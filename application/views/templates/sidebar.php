@@ -1,12 +1,12 @@
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-book"></i>
+                    <i class="fas fa-motorcycle"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Pustaka Booking</div>
+                <div class="sidebar-brand-text mx-3">Dialer Motor</div>
             </a>
 
             <!-- Divider -->
@@ -22,7 +22,7 @@
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('admin'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                                <i class="fa fa-fw fa-house"></i>
                                 <span>Dashboard</span></a>
                         </li>
                     </li>
@@ -39,18 +39,18 @@
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku/kategori'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Kategori Buku</span></a>
+                                <i class="fa fa-fw fa-motorcycle"></i>
+                                <span>Kategori Motor</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Data Buku</span></a>
+                            <a class="nav-link pb-0" href="<?= base_url('motor'); ?>">
+                                <i class="fa fa-fw fa-motorcycle"></i>
+                                <span>Data Motor</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Data Anggota</span></a>
+                                <i class="fa fa-fw fa-user"></i>
+                                <span>Data Customer</span></a>
                         </li>
                     </li>
                 <!-- Divider -->

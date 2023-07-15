@@ -24,17 +24,17 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok Buku Terdaftar</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Stok motor Terdaftar</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
                 $where = ['stok != 0'];
-                $totalstok = $this->ModelBuku->total('stok', $where);
+                $totalstok = $this->ModelMotor->total('stok', $where);
                 echo $totalstok;
                 ?>
               </div>
             </div>
             <div class="col-auto">
-              <a href="<?= base_url('buku'); ?>"><i class="fas fa-book fa-3x text-primary"></i></a>
+              <a href="<?= base_url('motor'); ?>"><i class="fas fa-book fa-3x text-primary"></i></a>
             </div>
           </div>
         </div>
@@ -46,11 +46,11 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dipinjam</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">motor yang terjual</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
-                $where = ['dipinjam != 0'];
-                $totaldipinjam = $this->ModelBuku->total('dipinjam', $where);
+                $where = ['stok != 0'];
+                $totaldipinjam = $this->ModelMotor->total('stok', $where);
                 echo $totaldipinjam;
                 ?>
               </div>
@@ -68,11 +68,11 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-md font-weight-bold text-white text-uppercase mb-1">Buku yang dibooking</div>
+              <div class="text-md font-weight-bold text-white text-uppercase mb-1">motor yang dibooking</div>
               <div class="h1 mb-0 font-weight-bold text-white">
                 <?php
                 $where = ['dibooking !=0'];
-                $totaldibooking = $this->ModelBuku->total('dibooking', $where);
+                $totaldibooking = $this->ModelMotor->total('stok', $where);
                 echo $totaldibooking;
                 ?>
               </div>
@@ -128,33 +128,31 @@
 
     <div class="table-responsive table-bordered col-sm-5 ml-auto mr-auto mt-2">
       <div class="page-header">
-        <span class="fas fa-book text-warning mt-2"> Data Buku</span>
-        <a href="<?= base_url('buku'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a>
+        <span class="fas fa-book text-warning mt-2"> Data motor</span>
+        <a href="<?= base_url('motor'); ?>"><i class="fas fa-search text-primary mt-2 float-right"> Tampilkan</i></a>
       </div>
       <div class="table-responsive">
         <table class="table mt-3" id="table-datatable">
           <thead>
             <tr>
               <th>#</th>
-              <th>Judul Buku</th>
-              <th>Pengarang</th>
-              <th>Penerbit</th>
-              <th>Tahun Terbit</th>
-              <th>ISBN</th>
+              <th>Nama motor</th>
+              <th>Merk</th>
+              <th>Warna</th>
+              <th>Tahun</th>
               <th>Stok</th>
             </tr>
           </thead>
           <tbody>
             <?php
             $i = 1;
-            foreach ($buku as $b) { ?>
+            foreach ($motor as $b) { ?>
               <tr>
                 <td><?= $i++; ?></td>
-                <td><?= $b['judul_buku']; ?></td>
-                <td><?= $b['pengarang']; ?></td>
-                <td><?= $b['penerbit']; ?></td>
-                <td><?= $b['tahun_terbit']; ?></td>
-                <td><?= $b['isbn']; ?></td>
+                <td><?= $b['nm_motor']; ?></td>
+                <td><?= $b['merk']; ?></td>
+                <td><?= $b['warna']; ?></td>
+                <td><?= $b['tahun']; ?></td>
                 <td><?= $b['stok']; ?></td>
               </tr>
             <?php } ?>

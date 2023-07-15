@@ -1,32 +1,32 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class ModelBuku extends CI_Model
+class Modelmotor extends CI_Model
 {
-    //manajemen buku
-    public function getBuku()
+    //manajemen motor
+    public function getMotor()
     {
-        return $this->db->get('buku');
+        return $this->db->get('motor');
     }
 
-    public function bukuWhere($where)
+    public function motorWhere($where)
     {
-        return $this->db->get_where('buku', $where);
+        return $this->db->get_where('motor', $where);
     }
 
-    public function simpanBuku($data = null)
+    public function simpanMotor($data = null)
     {
-        $this->db->insert('buku',$data);
+        $this->db->insert('motor',$data);
     }
 
-    public function updateBuku($data = null, $where = null)
+    public function updatemotor($data = null, $where = null)
     {
-        $this->db->update('buku', $data, $where);
+        $this->db->update('motor', $data, $where);
     }
 
-    public function hapusBuku($where = null)
+    public function hapusmotor($where = null)
     {
-        $this->db->delete('buku', $where);
+        $this->db->delete('motor', $where);
     }
 
     public function total($field, $where)
@@ -35,7 +35,7 @@ class ModelBuku extends CI_Model
         if(!empty($where) && count($where) > 0){
             $this->db->where($where);
         }
-        $this->db->from('buku');
+        $this->db->from('motor');
         return $this->db->get()->row($field);
     }
     
@@ -66,11 +66,11 @@ class ModelBuku extends CI_Model
     }
 
     //join
-    public function joinKategoriBuku($where)
+    public function joinKategoriMotor($where)
     {
-        $this->db->select('buku.id_kategori,kategori.kategori');
-        $this->db->from('buku');
-        $this->db->join('kategori','kategori.id = buku.id_kategori');
+        $this->db->select('motor.id_kategori,kategori.kategori');
+        $this->db->from('motor');
+        $this->db->join('kategori','kategori.id = motor.id_kategori');
         $this->db->where($where);
         return $this->db->get();
     }

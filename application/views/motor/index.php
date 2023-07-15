@@ -10,19 +10,16 @@
                 </div>
             <?php }?>
             <?= $this->session->flashdata('pesan'); ?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#bukuBaruModal"><i class="fas fa-file-alt"></i> Buku Baru</a>
+            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#motorBaruModal"><i class="fas fa-file-alt"></i> motor Baru</a>
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">Pengarang</th>
-                        <th scope="col">Penerbit</th>
-                        <th scope="col">Tahun Terbit</th>
-                        <th scope="col">ISBN</th>
+                        <th scope="col">Nama Motor</th>
+                        <th scope="col">Merk</th>
+                        <th scope="col">Warna</th>
+                        <th scope="col">Tahun</th>
                         <th scope="col">Stok</th>
-                        <th scope="col">DiPinjam</th>
-                        <th scope="col">DiBooking</th>
                         <th scope="col">Gambar</th>
                         <th scope="col">Pilihan</th>
                     </tr>
@@ -31,25 +28,22 @@
 
                     <?php
                         $a = 1;
-                        foreach ($buku as $b) { ?>
+                        foreach ($motor as $b) { ?>
                     <tr>
                         <th scope="row"><?= $a++; ?></th>
-                        <td><?= $b['judul_buku']; ?></td>
-                        <td><?= $b['pengarang']; ?></td>
-                        <td><?= $b['penerbit']; ?></td>
-                        <td><?= $b['tahun_terbit']; ?></td>
-                        <td><?= $b['isbn']; ?></td>
+                        <td><?= $b['judul_motor']; ?></td>
+                        <td><?= $b['merk']; ?></td>
+                        <td><?= $b['warna']; ?></td>
+                        <td><?= $b['tahun']; ?></td>
                         <td><?= $b['stok']; ?></td>
-                        <td><?= $b['dipinjam']; ?></td>
-                        <td><?= $b['dibooking']; ?></td>
                         <td>
                             <picture>
                                 <source srcset="" type="image/svg+xml">
                                 <img src="<?= base_url('assets/img/upload/') . $b['image'];?>" class="img-fluid img-thumbnail" alt="...">
                             </picture></td>
                         <td>
-                            <a href="<?= base_url('buku/ubahBuku/').$b['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                            <a href="<?= base_url('buku/hapusbuku/').$b['id'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$b['judul_buku'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
+                            <a href="<?= base_url('motor/ubahmotor/').$b['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                            <a href="<?= base_url('motor/hapusmotor/').$b['id'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.$b['judul_motor'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -64,20 +58,20 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Modal Tambah buku baru-->
-<div class="modal fade" id="bukuBaruModal" tabindex="-1" role="dialog" aria-labelledby="bukuBaruModalLabel" aria-hidden="true">
+<!-- Modal Tambah motor baru-->
+<div class="modal fade" id="motorBaruModal" tabindex="-1" role="dialog" aria-labelledby="motorBaruModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bukuBaruModalLabel">Tambah Buku</h5>
+                <h5 class="modal-title" id="motorBaruModalLabel">Tambah motor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('buku'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('motor'); ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="judul_buku" name="judul_buku" placeholder="Masukkan Judul Buku">
+                        <input type="text" class="form-control form-control-user" id="judul_motor" name="judul_motor" placeholder="Masukkan Judul motor">
                     </div>
                     <div class="form-group">
                         <select name="id_kategori" class="form-control form-control-user">
